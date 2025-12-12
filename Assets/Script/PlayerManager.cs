@@ -12,6 +12,7 @@ public class PlayerManager : MonoBehaviour
     [Header("Input")]
     [SerializeField] private InputActionReference move;
     [SerializeField] private InputActionReference fire;
+    [SerializeField] private InputActionReference quit;
 
     [Header("Stats")]
     [SerializeField] private PlayerStats stats;
@@ -60,24 +61,32 @@ public class PlayerManager : MonoBehaviour
     {
         move.action.Enable();
         fire.action.Enable();
+        quit.action.Enable();
 
         move.action.started += OnMove;
         move.action.performed += OnMove;
         move.action.canceled += OnMove;
 
         fire.action.started += OnShoot;
+
+        quit.action.started += OnQuit;
     }
+
+    
 
     private void OnDisable()
     {
         move.action.Disable();
         fire.action.Disable();
+        quit.action.Disable();
 
         move.action.started -= OnMove;
         move.action.performed -= OnMove;
         move.action.canceled -= OnMove;
 
         fire.action.started -= OnShoot;
+        
+        quit.action.started -= OnQuit;
     }
 
     private void Update()
@@ -111,6 +120,12 @@ public class PlayerManager : MonoBehaviour
         }
     }
 
+    private void Quit()
+    {
+        GameManager.Instance.ResetScore();
+        GameManager.Instance.GetComponent<ScenesManager>().ChangeScene(0);
+    }
+
     private void OnMove(InputAction.CallbackContext ctx)
     {
         rawMove = ctx.ReadValue<Vector2>().normalized;
@@ -124,6 +139,11 @@ public class PlayerManager : MonoBehaviour
         Shoot();
         bulletCanva.SetActive(false);
         fireCooldown = stats.CurrentFireRate.Value;
+    }
+    
+    private void OnQuit(InputAction.CallbackContext ctx)
+    {
+        Quit();
     }
 
     private void Shoot()

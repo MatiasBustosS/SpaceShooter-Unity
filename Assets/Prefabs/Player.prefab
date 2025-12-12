@@ -519,6 +519,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::PlayerManager
   move: {fileID: 5386656902355704768, guid: e1ba3d2758b52d0429f4d3da3c6b664e, type: 3}
   fire: {fileID: 8302966331318720342, guid: e1ba3d2758b52d0429f4d3da3c6b664e, type: 3}
+  quit: {fileID: 8894412578147038562, guid: e1ba3d2758b52d0429f4d3da3c6b664e, type: 3}
   stats: {fileID: 11400000, guid: ee1f1aa9a1faf324e876b406a112787e, type: 2}
   LeftLimit: {fileID: 0}
   RightLimit: {fileID: 0}
