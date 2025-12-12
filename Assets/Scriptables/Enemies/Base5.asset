@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1bee0807b3f14284bb6daff6d63f3c79, type: 3}
+  m_Name: Base5
+  m_EditorClassIdentifier: Assembly-CSharp::EnemyData
+  maxHealth: 50
+  speed: 0.3
+  damage: 2
+  bulletSpeed: 4
+  shootInterval: 5
+  contactDamage: 10
+  scoreValue: 500
+  sprite: {fileID: -6074857878563150496, guid: bdc0392a5cb54bb45bd0d75394fd1032, type: 3}
+  bulletSprite: {fileID: 4089303173491695827, guid: 227482435ccbbb345b00d9d14fd19af9, type: 3}
+  bulletSound: {fileID: 8300000, guid: 66e997de8e519aa4d827fe0c92b1c6f8, type: 3}
+  spawnTime: 40
